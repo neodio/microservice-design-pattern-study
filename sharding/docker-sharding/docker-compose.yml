@@ -1,0 +1,18 @@
+services:
+  mariadb:
+    image: mariadb:10
+    ports:
+      - "3306:3306"
+    container_name: mariadb
+    volumes:
+      - ./conf.d:/etc/mysql/conf.d
+#      - ./data:/var/lib/mysql
+      - ./init.d/:/docker-entrypoint-initdb.d/
+    environment:
+      TZ: Asia/Seoul
+      MARIADB_USER: user
+      MARIADB_PASSWORD: 1234
+      MARIADB_ALLOW_EMPTY_PASSWORD: 'true'
+#      MARIADB_ROOT_PASSWORD: 루트 계정 비밀번호
+      MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: 'true'
+    restart: always

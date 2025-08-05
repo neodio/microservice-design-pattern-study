@@ -118,33 +118,15 @@ public class UserServiceImpl implements UserService {
     public List<ResponseUser> getUserByAll() {
         List<ResponseUser> result = new ArrayList<>();
 
-        // shard1 -> users1 테이블
-        List<ResponseUser> users1 = getUserFindAll(0);
-        users1.forEach(u -> result.add(u));
+        Iterable<UserEntity> users = userRepository.findAll();
 
-        // shard2 -> users2 테이블
-        List<ResponseUser> users2 = getUserFindAll(1);
-        users2.forEach(u -> result.add(u));
-
-        // users = users1 + users2
-        return result;
-    }
-
-    private List<ResponseUser> getUserFindAll(int shardKey) {
-
-        List<ResponseUser> result = new ArrayList<>();
-
-        try {
-            RoutingDataSource.setShardKey(shardKey);
-            Iterable<UserEntity> users = userRepository.findAll();
-
-            users.forEach(v -> {
+        users.forEach(v -> {
                 result.add(new ModelMapper().map(v, ResponseUser.class));
             });
-        } finally {
-            RoutingDataSource.clear(); // context cleanup
-        }
-
+        // shard1 -> users1 테이블
+        // shard2 -> users2 테이블
+        // users = users1 + users2
+        // 작업 필요
         return result;
     }
 

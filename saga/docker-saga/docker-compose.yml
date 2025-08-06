@@ -1,0 +1,91 @@
+services:
+  zookeeper-1:
+    image: confluentinc/cp-zookeeper:latest
+    ports:
+      - "2181:2181"
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+    networks:
+      - kafka_net
+
+  # reachable on 9092 from the host and on 29092 from inside docker compose
+  kafka-1:
+    image: confluentinc/cp-kafka:latest
+    depends_on:
+      - zookeeper-1
+    ports:
+      - '29092:29092'
+#    expose:
+#      - '29092'
+    environment:
+      KAFKA_ZOOKEEPER_CONNECT: 'zookeeper-1:2181'
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka-1:9092,PLAINTEXT_HOST://localhost:29092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: '1'
+      KAFKA_MIN_INSYNC_REPLICAS: '1'
+    networks:
+      - kafka_net
+
+  init-kafka:
+    image: confluentinc/cp-kafka:latest
+    depends_on:
+      - kafka-1
+    entrypoint: [ '/bin/sh', '-c' ]
+    command: |
+      "
+      # blocks until kafka is reachable
+      kafka-topics --bootstrap-server kafka-1:9092 --list
+
+      echo -e 'Creating kafka topics'
+      kafka-topics --bootstrap-server kafka-1:9092 --create --if-not-exists --topic order-created --replication-factor 1 --partitions 1
+      kafka-topics --bootstrap-server kafka-1:9092 --create --if-not-exists --topic payment-completed --replication-factor 1 --partitions 1
+      kafka-topics --bootstrap-server kafka-1:9092 --create --if-not-exists --topic payment-failed --replication-factor 1 --partitions 1
+      kafka-topics --bootstrap-server kafka-1:9092 --create --if-not-exists --topic shipping-completed --replication-factor 1 --partitions 1
+      kafka-topics --bootstrap-server kafka-1:9092 --create --if-not-exists --topic shipping-failed --replication-factor 1 --partitions 1
+
+      echo -e 'Successfully created the following topics:'
+      kafka-topics --bootstrap-server kafka-1:9092 --list
+      "
+    networks:
+      - kafka_net
+
+  kafka-manager:
+    container_name: kafka-manager
+    # apple silicon #
+    platform: linux/amd64
+    image: hlebalbau/kafka-manager:stable
+    restart: on-failure
+    depends_on:
+      - zookeeper-1
+    environment:
+      ZK_HOSTS: zookeeper-1:2181
+      APPLICATION_SECRET: "random-secret"
+      KM_ARGS: -Djava.net.preferIPv4Stack=true
+    ports:
+      - "9000:9000"
+    networks:
+      - kafka_net
+
+  kafka-ui:
+    image: provectuslabs/kafka-ui:latest
+    restart: always
+    container_name: kafka-ui
+    ports:
+      - '8085:8080' # 호스트의 8085 포트를 컨테이너의 8080 포트에 바인딩
+    environment:
+      - KAFKA_CLUSTERS_0_NAME=local
+      - KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS=kafka-1:9092
+      - KAFKA_CLUSTERS_0_ZOOKEEPER=zookeeper-1:2181
+      - DYNAMIC_CONFIG_ENABLED=true
+      - KAFKA_CLUSTERS_0_AUDIT_TOPICAUDITENABLED=true
+      - KAFKA_CLUSTERS_0_AUDIT_CONSOLEAUDITENABLED=true
+    depends_on:
+      - zookeeper-1
+      - kafka-1
+    networks:
+      - kafka_net
+
+networks:
+  kafka_net:
+    driver: bridge

@@ -7,3 +7,16 @@
 * shipping-service에서
     * 결제가 성공 되었을 때, "배송 시작" 상태로 변경
     * 결제가 실패 되었을 때, Kafka Topic에 실패 메시지를 전달하고 상태를 "실패"로 변경
+
+### Local 테스트 환경을 위한 docker compose
+- 실행방법
+  ```
+  $ cd docker-saga
+  $ docker-compose up -d
+  ```
+
+- 종료방법
+  ```
+  $ cd docker-saga
+  $ docker-compose down -v
+  ```

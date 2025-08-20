@@ -31,3 +31,16 @@ $ docker build --tag enterfive/order-service:v2 -f Dockerfile .
 ```
 $ docker images | grep order-service
 ```
+
+### Local 테스트 환경을 위한 docker compose
+- 실행방법
+  ```
+  $ cd docker-deployment
+  $ docker-compose up -d
+  ```
+
+- 종료방법
+  ```
+  $ cd docker-deployment
+  $ docker-compose down -v
+  ```

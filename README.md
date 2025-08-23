@@ -242,4 +242,4 @@
 * 마이크로서비스 배포 전략
 > * deployment 폴더
 * order-service에 대해 Blue-Green, Canary, AB Test에 대해 배포 예제
-    * docker-compose + nginx 조합으로 배포 테스트
+    * docker-compose + nginx 조합으로 배포 테스트 

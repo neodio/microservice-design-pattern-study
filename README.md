@@ -143,6 +143,18 @@
 | sharding | sharding-user-service           | sharding 패턴 유저 서비스      |
 | test | test-user-service           | 테스트 전략 유저 서비스           |
 
+### Monolithic Architecture Samples
+* monolithic-architecture를 사용하는 샘플 프로젝트
+* 패키지 구조 파악
+> * monolithic-architecture 폴더
+* https://xzio.tistory.com/2651
+
+### Modular Monolithic Architecture Samples
+* monolithic-architecture를 사용하는 샘플 프로젝트
+* 패키지 구조 파악
+> * modular-monolithic-architecture 폴더
+* https://xzio.tistory.com/2652
+
 ### MSA Communications Samples
 * user-esrvice와 order-service 간의 통신에 대한 샘플 코드
 * user-service에서 사용자 ID에 대한 상세 정보 조회 시 order-service로부터 사용자가 주문한 주문 목록을 가져오기
@@ -152,6 +164,7 @@
     >   gRPC 폴더
 > * graphql API 사용
     >   graphql 폴더
+* https://xzio.tistory.com/2654
 
 ### API Gateway & Service Discovery / Registry
 * apigateway-service를 사용하는 user-esrvice와 order-service 간의 통신에 대한 샘플 코드

@@ -6,6 +6,7 @@ services:
       - "18082:8082"
     networks:
       my-network:
+
   order-service-green:
     image: enterfive/order-service:v2
     ports:

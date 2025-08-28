@@ -230,7 +230,7 @@
 * https://xzio.tistory.com/2661
 
 ### Observability
-* 서비스 간에 발생되는 로그를 Fluend 서비스에 통합하여 처리
+* 서비스 간에 발생되는 로그를 Fluentd 서비스에 통합하여 처리
 > * observability 폴더
 * user-service, order-service, payment-service, shipping-service의 로그를 fluentd-central에 저장
 * fluentd-central에서 마이크로서비스의 모든 로그를 관리

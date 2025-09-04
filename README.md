@@ -84,64 +84,64 @@
 - OS : macOS
 
 ## 프로젝트별 설명
-| 대분류   | 프로젝트명                           | 프로젝트 설명                 |
-|-------|---------------------------------|-------------------------|
-| async | async-delivery-service          | 비동기 패턴 배송 서비스           |
-| async | async-gateway-service           | 비동기 패턴 게이트웨이 서비스        |
-| async | async-order-service             | 비동기 패턴 주문 서비스           |
-| async | async-service-discovery         | 비동기 패턴 디스커버리 서비스        |
-| async | async-user-service              | 비동기 패턴 유저 서비스           |
-| async | docker-async                    | 비동기 패턴 도커               |
-| cache | async-order-service             | 캐시 주문 서비스               |
-| cache | async-user-service              | 캐시 유저 서비스               |
-| cqrs1 | cqrs1-order-service             | cqrs 패턴1 주문 서비스         |
-| cqrs1 | cqrs1-user-service              | cqrs 패턴1 유저 서비스         |
-| cqrs2 | cqrs2-order-service             | cqrs 패턴2 주문 서비스         |
-| cqrs2 | cqrs2-user-service              | cqrs 패턴2 유저 서비스         |
-| deployment | deployment-order-service        | deployment 패턴 주문 서비스    |
-| deployment | deployment-user-service         | deployment 패턴 유저 서비스    |
-| deployment | docker-deployment               | deployment 패턴 도커        |
-| eda | docker-eda                      | eda 패턴 도커               |
-| eda | eda-gateway-service             | eda 패턴 게이트웨이 서비스        |
-| eda | eda-order-service               | eda 패턴 주문 서비스           |
-| eda | eda-payment-service             | eda 패턴 결제 서비스           |
-| eda | eda-service-discovery           | eda 패턴 디스커버리            |
-| eda | eda-shipping-service            | eda 패턴 배송 서비스           |
-| eda | eda-user-service                | eda 패턴 사용자 서비스          |
-| gateway | gateway-order-service           | gateway 패턴 주문 서비스       |
-| gateway | gateway-service                 | gateway 패턴 게이트웨이 서비스    |
-| gateway | gateway-user-service            | gateway 패턴 유저 서비스       |
-| gateway | service-discovery               | gateway 패턴 디스커버리 서비스    |
-| graphql | graphql-order-service           | graphql 통신 방식 주문 서비스    |
-| graphql | graphql-user-service            | graphql 통신 방식 사용자 서비스   |
-| grpc | grpc-order-service              | grpc 통신 방식 주문 서비스       |
-| grpc | grpc-user-service               | grpc 통신 방식 사용자 서비스      |
-|  | modular-monolithic-architecture | 모듈러 모놀로식 아키텍처 예제        |
-|  | monolithic-architecture         | 모놀로식 아키텍처 예제            |
+| 대분류           | 프로젝트명                           | 프로젝트 설명                 |
+|---------------|---------------------------------|-------------------------|
+| async         | async-delivery-service          | 비동기 패턴 배송 서비스           |
+| async         | async-gateway-service           | 비동기 패턴 게이트웨이 서비스        |
+| async         | async-order-service             | 비동기 패턴 주문 서비스           |
+| async         | async-service-discovery         | 비동기 패턴 디스커버리 서비스        |
+| async         | async-user-service              | 비동기 패턴 유저 서비스           |
+| async         | docker-async                    | 비동기 패턴 도커               |
+| cache         | async-order-service             | 캐시 주문 서비스               |
+| cache         | async-user-service              | 캐시 유저 서비스               |
+| cqrs1         | cqrs1-order-service             | cqrs 패턴1 주문 서비스         |
+| cqrs1         | cqrs1-user-service              | cqrs 패턴1 유저 서비스         |
+| cqrs2         | cqrs2-order-service             | cqrs 패턴2 주문 서비스         |
+| cqrs2         | cqrs2-user-service              | cqrs 패턴2 유저 서비스         |
+| deployment    | deployment-order-service        | deployment 패턴 주문 서비스    |
+| deployment    | deployment-user-service         | deployment 패턴 유저 서비스    |
+| deployment    | docker-deployment               | deployment 패턴 도커        |
+| eda           | docker-eda                      | eda 패턴 도커               |
+| eda           | eda-gateway-service             | eda 패턴 게이트웨이 서비스        |
+| eda           | eda-order-service               | eda 패턴 주문 서비스           |
+| eda           | eda-payment-service             | eda 패턴 결제 서비스           |
+| eda           | eda-service-discovery           | eda 패턴 디스커버리            |
+| eda           | eda-shipping-service            | eda 패턴 배송 서비스           |
+| eda           | eda-user-service                | eda 패턴 사용자 서비스          |
+| gateway       | gateway-order-service           | gateway 패턴 주문 서비스       |
+| gateway       | gateway-service                 | gateway 패턴 게이트웨이 서비스    |
+| gateway       | gateway-user-service            | gateway 패턴 유저 서비스       |
+| gateway       | service-discovery               | gateway 패턴 디스커버리 서비스    |
+| graphql       | graphql-order-service           | graphql 통신 방식 주문 서비스    |
+| graphql       | graphql-user-service            | graphql 통신 방식 사용자 서비스   |
+| grpc          | grpc-order-service              | grpc 통신 방식 주문 서비스       |
+| grpc          | grpc-user-service               | grpc 통신 방식 사용자 서비스      |
+|               | modular-monolithic-architecture | 모듈러 모놀로식 아키텍처 예제        |
+|               | monolithic-architecture         | 모놀로식 아키텍처 예제            |
 | observability | docker-observability            | observability 패턴 도커     |
 | observability | observability-order-service     | observability 패턴 주문 서비스 |
 | observability | observability-payment-service   | observability 패턴 결제 서비스 |
 | observability | observability-shipping-service  | observability 패턴 배송 서비스 |
 | observability | observability-user-service      | observability 패턴 유저 서비스 |
-| resilience | resilience-order-service        | resilience 패턴 주문 서비스    |
-| resilience | resilience-service-discovery    | resilience 패턴 디스커버리 서비스 |
-| resilience | resilience-user-service         | resilience 패턴 사용자 서비스   |
-| rest-api | rest-api-order-service          | rest-api 통신 방식 주문 서비스   |
-| rest-api | rest-api-user-service           | rest-api 통신 방식 사용자 서비스  |
-| saga | docker-saga                     | saga 패턴 도커              |
-| saga | saga-gateway-service            | saga 패턴 게이트웨이 서비스       |
-| saga | saga-order-service              | saga 패턴 주문 서비스          |
-| saga | saga-payment-service            | saga 패턴 결제 서비스          |
-| saga | saga-shipping-service           | saga 패턴 배송 서비스          |
-| saga | saga-user-service               | saga 패턴 유저 서비스          |
-| security | security-gateway-service        | security 게이트웨이 서비스      |
-| security | security-service-discovery      | security 패턴 디스커버리 서비스   |
-| security | security-user-service           | security 패턴 사용자 서비스     |
-| sharding | docker-sharding                 | sharding 패턴 도커          |
-| sharding | sharding-order-service          | sharding 패턴 주문 서비스      |
-| sharding | sharding-service-discovery      | sharding 패턴 디스커버리 서비스   |
-| sharding | sharding-user-service           | sharding 패턴 유저 서비스      |
-| test | test-user-service           | 테스트 전략 유저 서비스           |
+| resilience    | resilience-order-service        | resilience 패턴 주문 서비스    |
+| resilience    | resilience-service-discovery    | resilience 패턴 디스커버리 서비스 |
+| resilience    | resilience-user-service         | resilience 패턴 사용자 서비스   |
+| rest-api      | rest-api-order-service          | rest-api 통신 방식 주문 서비스   |
+| rest-api      | rest-api-user-service           | rest-api 통신 방식 사용자 서비스  |
+| saga          | docker-saga                     | saga 패턴 도커              |
+| saga          | saga-gateway-service            | saga 패턴 게이트웨이 서비스       |
+| saga          | saga-order-service              | saga 패턴 주문 서비스          |
+| saga          | saga-payment-service            | saga 패턴 결제 서비스          |
+| saga          | saga-shipping-service           | saga 패턴 배송 서비스          |
+| saga          | saga-user-service               | saga 패턴 유저 서비스          |
+| security      | security-gateway-service        | security 게이트웨이 서비스      |
+| security      | security-service-discovery      | security 패턴 디스커버리 서비스   |
+| security      | security-user-service           | security 패턴 사용자 서비스     |
+| sharding      | docker-sharding                 | sharding 패턴 도커          |
+| sharding      | sharding-order-service          | sharding 패턴 주문 서비스      |
+| sharding      | sharding-service-discovery      | sharding 패턴 디스커버리 서비스   |
+| sharding      | sharding-user-service           | sharding 패턴 유저 서비스      |
+| test          | test-user-service           | 테스트 전략 유저 서비스           |
 
 ### Monolithic Architecture Samples
 * monolithic-architecture를 사용하는 샘플 프로젝트
@@ -267,3 +267,4 @@
 * order-service에 대해 Blue-Green, Canary, AB Test에 대해 배포 예제
     * docker-compose + nginx 조합으로 배포 테스트
 * https://xzio.tistory.com/2665
+
